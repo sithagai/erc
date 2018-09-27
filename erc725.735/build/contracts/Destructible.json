@@ -1,0 +1,791 @@
+{
+  "contractName": "Destructible",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MANAGEMENT_KEY",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "actionThreshold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "addrToKey",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "managementThreshold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "numKeys",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_recipient",
+          "type": "address"
+        }
+      ],
+      "name": "destroyAndSend",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260016000556001805534801561001957600080fd5b50610456806100296000396000f300608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063058b316c1461007d57806338f4edd4146100a857806363f14c3c146100d3578063aa0a514214610132578063c9d24ecc1461015d578063f5074f4114610188575b600080fd5b34801561008957600080fd5b506100926101cb565b6040518082815260200191505060405180910390f35b3480156100b457600080fd5b506100bd6101d0565b6040518082815260200191505060405180910390f35b3480156100df57600080fd5b50610114600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101d6565b60405180826000191660001916815260200191505060405180910390f35b34801561013e57600080fd5b506101476101f9565b6040518082815260200191505060405180910390f35b34801561016957600080fd5b506101726101ff565b6040518082815260200191505060405180910390f35b34801561019457600080fd5b506101c9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061020b565b005b600181565b60015481565b60008173ffffffffffffffffffffffffffffffffffffffff166001029050919050565b60005481565b60006002800154905090565b610213610273565b151561021e57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561025a57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16ff5b60003073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156102b257600190506102e5565b60016000541415156102c357600080fd5b6102e26102cf336101d6565b600160026102e89092919063ffffffff16565b90505b90565b60006102f2610405565b60008560000160008660001916600019168152602001908152602001600020606060405190810160405290816000820180548060200260200160405190810160405280929190818152602001828054801561036c57602002820191906000526020600020905b815481526020019060010190808311610358575b505050505081526020016001820154815260200160028201546000191660001916815250509150600060010282604001516000191614156103b057600092506103fc565b600090505b8160000151518110156103fb57838260000151828151811015156103d557fe5b9060200190602002015114156103ee57600192506103fc565b80806001019150506103b5565b5b50509392505050565b60606040519081016040528060608152602001600081526020016000801916815250905600a165627a7a72305820d11cd833bffd16a3d9c5f1214bf97737b6e3ff95f38ff18aa1235fd758ac8cc10029",
+  "deployedBytecode": "0x608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063058b316c1461007d57806338f4edd4146100a857806363f14c3c146100d3578063aa0a514214610132578063c9d24ecc1461015d578063f5074f4114610188575b600080fd5b34801561008957600080fd5b506100926101cb565b6040518082815260200191505060405180910390f35b3480156100b457600080fd5b506100bd6101d0565b6040518082815260200191505060405180910390f35b3480156100df57600080fd5b50610114600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101d6565b60405180826000191660001916815260200191505060405180910390f35b34801561013e57600080fd5b506101476101f9565b6040518082815260200191505060405180910390f35b34801561016957600080fd5b506101726101ff565b6040518082815260200191505060405180910390f35b34801561019457600080fd5b506101c9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061020b565b005b600181565b60015481565b60008173ffffffffffffffffffffffffffffffffffffffff166001029050919050565b60005481565b60006002800154905090565b610213610273565b151561021e57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561025a57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16ff5b60003073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156102b257600190506102e5565b60016000541415156102c357600080fd5b6102e26102cf336101d6565b600160026102e89092919063ffffffff16565b90505b90565b60006102f2610405565b60008560000160008660001916600019168152602001908152602001600020606060405190810160405290816000820180548060200260200160405190810160405280929190818152602001828054801561036c57602002820191906000526020600020905b815481526020019060010190808311610358575b505050505081526020016001820154815260200160028201546000191660001916815250509150600060010282604001516000191614156103b057600092506103fc565b600090505b8160000151518110156103fb57838260000151828151811015156103d557fe5b9060200190602002015114156103ee57600192506103fc565b80806001019150506103b5565b5b50509392505050565b60606040519081016040528060608152602001600081526020016000801916815250905600a165627a7a72305820d11cd833bffd16a3d9c5f1214bf97737b6e3ff95f38ff18aa1235fd758ac8cc10029",
+  "sourceMap": "310:367:1:-;;;334:1:7;297:38;;374:1;341:34;;310:367:1;8:9:-1;5:2;;;30:1;27;20:12;5:2;310:367:1;;;;;;;",
+  "deployedSourceMap": "310:367:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;227:42:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;227:42:7;;;;;;;;;;;;;;;;;;;;;;;341:34;;8:9:-1;5:2;;;30:1;27;20:12;5:2;341:34:7;;;;;;;;;;;;;;;;;;;;;;;855:128;;8:9:-1;5:2;;;30:1;27;20:12;5:2;855:128:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;297:38;;8:9:-1;5:2;;;30:1;27;20:12;5:2;297:38:7;;;;;;;;;;;;;;;;;;;;;;;576:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;576:115:7;;;;;;;;;;;;;;;;;;;;;;;499:176:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;499:176:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;227:42:7;268:1;227:42;:::o;341:34::-;;;;:::o;855:128::-;933:7;971:4;963:13;;;;956:20;;855:128;;;:::o;297:38::-;;;;:::o;576:115::-;642:4;669:7;:15;;;662:22;;576:115;:::o;499:176:1:-;1773:19:7;:17;:19::i;:::-;1765:28;;;;;;;;631:1:1;609:24;;:10;:24;;;;601:33;;;;;;;;657:10;644:24;;;1241:397:7;1317:10;1369:4;1347:27;;:10;:27;;;1343:109;;;1437:4;1430:11;;;;1343:109;1561:1;1538:19;;:24;1530:33;;;;;;;;1580:51;1593:21;1603:10;1593:9;:21::i;:::-;268:1;1580:7;:12;;:51;;;;;:::i;:::-;1573:58;;1241:397;;:::o;714:414:10:-;824:10;850:12;;:::i;:::-;959:6;865:4;:12;;:17;878:3;865:17;;;;;;;;;;;;;;;;;850:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;905:1;896:10;;:1;:5;;;:10;;;;892:53;;;929:5;922:12;;;;892:53;968:1;959:10;;954:168;975:1;:10;;;:17;971:1;:21;954:168;;;1034:7;1017:1;:10;;;1028:1;1017:13;;;;;;;;;;;;;;;;;;:24;1013:99;;;1069:4;1061:12;;1091:7;;1013:99;994:3;;;;;;;954:168;;;714:414;;;;;;;;:::o;310:367:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"./KeyBase.sol\";\n\n/// @title Destructible\n/// @author Mircea Pasoi\n/// @notice Base contract that can be destroyed by MANAGEMENT_KEY or the identity itself\n/// @dev Inspired by https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/lifecycle/Destructible.sol\n\ncontract Destructible is KeyBase {\n    /// @dev Transfers the current balance and terminates the contract\n    /// @param _recipient All funds in contract will be sent to this recipient\n    function destroyAndSend(address _recipient)\n        public\n        onlyManagementOrSelf\n    {\n        require(_recipient != address(0));\n        selfdestruct(_recipient);\n    }\n}",
+  "sourcePath": "/home/sithagaisingam/Works/erc725-735-master/contracts/Destructible.sol",
+  "ast": {
+    "absolutePath": "/home/sithagaisingam/Works/erc725-735-master/contracts/Destructible.sol",
+    "exportedSymbols": {
+      "Destructible": [
+        701
+      ]
+    },
+    "id": 702,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 677,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/home/sithagaisingam/Works/erc725-735-master/contracts/KeyBase.sol",
+        "file": "./KeyBase.sol",
+        "id": 678,
+        "nodeType": "ImportDirective",
+        "scope": 702,
+        "sourceUnit": 1826,
+        "src": "26:23:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 679,
+              "name": "KeyBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1825,
+              "src": "335:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_KeyBase_$1825",
+                "typeString": "contract KeyBase"
+              }
+            },
+            "id": 680,
+            "nodeType": "InheritanceSpecifier",
+            "src": "335:7:1"
+          }
+        ],
+        "contractDependencies": [
+          1825
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Destructible\n @author Mircea Pasoi\n @notice Base contract that can be destroyed by MANAGEMENT_KEY or the identity itself\n @dev Inspired by https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/lifecycle/Destructible.sol",
+        "fullyImplemented": true,
+        "id": 701,
+        "linearizedBaseContracts": [
+          701,
+          1825
+        ],
+        "name": "Destructible",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 699,
+              "nodeType": "Block",
+              "src": "591:84:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 692,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 688,
+                          "name": "_recipient",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 682,
+                          "src": "609:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 690,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "631:1:1",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 689,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "623:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 691,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "623:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "609:24:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 687,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3183,
+                        3184
+                      ],
+                      "referencedDeclaration": 3183,
+                      "src": "601:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 693,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "601:33:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 694,
+                  "nodeType": "ExpressionStatement",
+                  "src": "601:33:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 696,
+                        "name": "_recipient",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 682,
+                        "src": "657:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 695,
+                      "name": "selfdestruct",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3188,
+                      "src": "644:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 697,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "644:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 698,
+                  "nodeType": "ExpressionStatement",
+                  "src": "644:24:1"
+                }
+              ]
+            },
+            "documentation": "@dev Transfers the current balance and terminates the contract\n @param _recipient All funds in contract will be sent to this recipient",
+            "id": 700,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 685,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 684,
+                  "name": "onlyManagementOrSelf",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1824,
+                  "src": "566:20:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "566:20:1"
+              }
+            ],
+            "name": "destroyAndSend",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 683,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 682,
+                  "name": "_recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 700,
+                  "src": "523:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 681,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "523:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "522:20:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 686,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "591:0:1"
+            },
+            "scope": 701,
+            "src": "499:176:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 702,
+        "src": "310:367:1"
+      }
+    ],
+    "src": "0:677:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/sithagaisingam/Works/erc725-735-master/contracts/Destructible.sol",
+    "exportedSymbols": {
+      "Destructible": [
+        701
+      ]
+    },
+    "id": 702,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 677,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/home/sithagaisingam/Works/erc725-735-master/contracts/KeyBase.sol",
+        "file": "./KeyBase.sol",
+        "id": 678,
+        "nodeType": "ImportDirective",
+        "scope": 702,
+        "sourceUnit": 1826,
+        "src": "26:23:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 679,
+              "name": "KeyBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1825,
+              "src": "335:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_KeyBase_$1825",
+                "typeString": "contract KeyBase"
+              }
+            },
+            "id": 680,
+            "nodeType": "InheritanceSpecifier",
+            "src": "335:7:1"
+          }
+        ],
+        "contractDependencies": [
+          1825
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Destructible\n @author Mircea Pasoi\n @notice Base contract that can be destroyed by MANAGEMENT_KEY or the identity itself\n @dev Inspired by https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/lifecycle/Destructible.sol",
+        "fullyImplemented": true,
+        "id": 701,
+        "linearizedBaseContracts": [
+          701,
+          1825
+        ],
+        "name": "Destructible",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 699,
+              "nodeType": "Block",
+              "src": "591:84:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 692,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 688,
+                          "name": "_recipient",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 682,
+                          "src": "609:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 690,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "631:1:1",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 689,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "623:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 691,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "623:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "609:24:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 687,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3183,
+                        3184
+                      ],
+                      "referencedDeclaration": 3183,
+                      "src": "601:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 693,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "601:33:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 694,
+                  "nodeType": "ExpressionStatement",
+                  "src": "601:33:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 696,
+                        "name": "_recipient",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 682,
+                        "src": "657:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 695,
+                      "name": "selfdestruct",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3188,
+                      "src": "644:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 697,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "644:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 698,
+                  "nodeType": "ExpressionStatement",
+                  "src": "644:24:1"
+                }
+              ]
+            },
+            "documentation": "@dev Transfers the current balance and terminates the contract\n @param _recipient All funds in contract will be sent to this recipient",
+            "id": 700,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 685,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 684,
+                  "name": "onlyManagementOrSelf",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1824,
+                  "src": "566:20:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "566:20:1"
+              }
+            ],
+            "name": "destroyAndSend",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 683,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 682,
+                  "name": "_recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 700,
+                  "src": "523:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 681,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "523:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "522:20:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 686,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "591:0:1"
+            },
+            "scope": 701,
+            "src": "499:176:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 702,
+        "src": "310:367:1"
+      }
+    ],
+    "src": "0:677:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-09-27T06:58:04.770Z"
+}
